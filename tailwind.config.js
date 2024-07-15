@@ -52,7 +52,7 @@ export default {
         "1.125rem",
         {
           lineHeight: "1.5rem",
-          letterSpacing: "-0.01em",
+          letterSpacing: "0.03em",
           fontWeight: "500",
         },
       ],
