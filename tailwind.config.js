@@ -49,7 +49,7 @@ export default {
         },
       ],
       body: [
-        "1.125rem",
+        "1.025rem",
         {
           lineHeight: "1.5rem",
           letterSpacing: "0.03em",
