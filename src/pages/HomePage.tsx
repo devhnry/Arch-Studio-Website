@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Container } from "../components/Container";
 
 export const HomePage = () => {
-
   const links = ["portfolio", "about us", "contact"];
   const screens = [0, 1, 2, 3];
   const [page, setPage] = useState(0);
@@ -34,12 +33,21 @@ export const HomePage = () => {
     },
   ];
 
-    useEffect(() => {
-      const interval = setInterval(() => {
+  const welcomeText = [
+    "We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.",
+    "Over the past 10 years, we have worked on all kinds of projects. From stations to high-rise buildings, we create spaces that inspire and delight.",
+    "We work closely with our clients so that we understand the intricacies of each project. This allows us to work in harmony the surrounding area to create truly stunning projects that will stand the test of time.",
+  ];
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+    if (window.innerWidth > 768) {
+      interval = setInterval(() => {
         setPage((prevIndex) => (prevIndex + 1) % screens.length);
       }, 5000);
-      return () => clearInterval(interval);
-    }, [screens.length]);
+    }
+    return () => clearInterval(interval);
+  }, [screens.length]);
 
   return (
     <Container>
@@ -69,15 +77,19 @@ export const HomePage = () => {
         </>
       </nav>
 
+      {/* <===== Hero Area =====> */}
       <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan">
         <div
-          className={`bg-slate-600 bg-img bg-img-${page + 1} min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] font-medium relative`}
+          className={`bg-slate-600 bg-img bg-img-${
+            page + 1
+          } min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] font-medium relative`}
         >
           <div className="absolute bg-black opacity-[0.42] inset-0"></div>
           <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[46%] -translate-y-[46%]">
             <div className="grid gap-2">
               <h1 className="leading-[clamp(3rem,3rem+3vw,5.1rem)] text-[clamp(3.2rem,3.2rem+6vw,6.1rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
-                {screenDetails[page].upperTitle} <br /> {screenDetails[page].lowerTitle}
+                {screenDetails[page].upperTitle}
+                <br /> {screenDetails[page].lowerTitle}
               </h1>
               <p className="max-w-[450px] min-w-[300px] pr-8">
                 {screenDetails[page].details}
@@ -103,6 +115,20 @@ export const HomePage = () => {
               </p>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/*<===== Welcome Area =====>  */}
+      <section className="relative border-red border max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[72px] md:my-[120px] px-6 text-dark-grey text-body sm:px-1">
+        <p className="absolute text-heading-l text-[8rem] text-light-grey opacity-50 hidden md:block -top-[1.8rem]">Welcome</p>
+        <div className="border-[0.5px] border-dark-grey opacity-70 w-[65px] absolute left-[1.5rem] md:hidden"></div>
+        <h2 className="text-[clamp(3rem,2.3rem+3vw,4.9rem)] text-dark-blue leading-[clamp(3.25rem,2.5rem+2vw,4.3rem)] font-[800] tracking-[0.075rem] whitespace-nowrap pb-8 pt-[4.125rem]">
+          Welcome to <br /> Arch Studio
+        </h2>
+        <div className="grid gap-6 min-w-[310px] max-w-[572px] md:text-[1.125rem]">
+          {welcomeText.map((text, i) => (
+            <p key={i}>{text}</p>
+          ))}
         </div>
       </section>
     </Container>
