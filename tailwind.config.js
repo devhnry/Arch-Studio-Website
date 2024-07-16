@@ -53,7 +53,7 @@ export default {
         {
           lineHeight: "1.5rem",
           letterSpacing: "0.03em",
-          fontWeight: "500",
+          fontWeight: "400",
         },
       ],
     },
