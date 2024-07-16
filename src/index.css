@@ -6,10 +6,25 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 .bg-img{
-  background-image: url(/src/assets/home/image-8.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.bg-img-1{
+  background-image: url(/src/assets/home/image-8.png);
+}
+
+.bg-img-2{
+  background-image: url(/src/assets/home/image-5.png);
+}
+
+.bg-img-3{
+  background-image: url(/src/assets/home/image-6.png);
+}
+
+.bg-img-4{
+  background-image: url(/src/assets/home/image-7.png);
 }
 
 @tailwind base;
