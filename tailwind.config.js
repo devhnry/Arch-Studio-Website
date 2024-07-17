@@ -67,6 +67,9 @@ export default {
         "thin-grey": "hsla(224, 23%, 94%, 1)",
         red: "hsla(0, 69%, 61%, 1)",
       },
+      screens: {
+        "ls" : "900px"
+      }
     },
   },
   plugins: [],
