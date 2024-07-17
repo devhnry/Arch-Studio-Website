@@ -41,7 +41,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
       interval = setInterval(() => {
         setPage((prevIndex) => (prevIndex + 1) % screens.length);
       }, 5000);
@@ -82,12 +82,12 @@ export const HomePage = () => {
         <div
           className={`bg-slate-600 bg-img bg-img-${
             page + 1
-          } min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] font-medium relative`}
+          } min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] relative`}
         >
           <div className="absolute bg-black opacity-[0.42] inset-0"></div>
-          <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[46%] -translate-y-[46%]">
+          <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[50%] -translate-y-[47%]">
             <div className="grid gap-2">
-              <h1 className="leading-[clamp(3rem,3rem+3vw,5.1rem)] text-[clamp(3.2rem,3.2rem+6vw,6.1rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
+              <h1 className="leading-[clamp(3rem,9.14vw+1rem,5rem)] text-[clamp(3.2rem,9.14vw+1rem,6rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
                 {screenDetails[page].upperTitle}
                 <br /> {screenDetails[page].lowerTitle}
               </h1>
@@ -100,11 +100,11 @@ export const HomePage = () => {
               <img src="src/assets/icons/icon-arrow-white.svg" alt="" />
             </div>
           </div>
-          <div className="absolute left-[-49.24px] bottom-0 hidden xl:flex">
+          <div className="absolute left-[-49.64px] bottom-0 hidden xl:flex">
             {screens.map((screen) => (
               <p
                 onClick={() => setPage(screen)}
-                className={`px-4 py-6 block items-center leading-[0] cursor-pointer hover:bg-dark-grey hover:text-white ${
+                className={`px-4 py-6 block items-center leading-[0] cursor-pointer hover:bg-dark-grey hover:text-white border-none ${
                   screen === page
                     ? "bg-dark-blue text-white"
                     : "text-dark-grey bg-white"
@@ -119,18 +119,26 @@ export const HomePage = () => {
       </section>
 
       {/*<===== Welcome Area =====>  */}
-      <section className="relative border-red border max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[72px] md:my-[120px] px-6 text-dark-grey text-body sm:px-1">
-        <p className="absolute text-heading-l text-[8rem] text-light-grey opacity-50 hidden md:block -top-[1.8rem]">Welcome</p>
-        <div className="border-[0.5px] border-dark-grey opacity-70 w-[65px] absolute left-[1.5rem] md:hidden"></div>
-        <h2 className="text-[clamp(3rem,2.3rem+3vw,4.9rem)] text-dark-blue leading-[clamp(3.25rem,2.5rem+2vw,4.3rem)] font-[800] tracking-[0.075rem] whitespace-nowrap pb-8 pt-[4.125rem]">
-          Welcome to <br /> Arch Studio
-        </h2>
-        <div className="grid gap-6 min-w-[310px] max-w-[572px] md:text-[1.125rem]">
-          {welcomeText.map((text, i) => (
-            <p key={i}>{text}</p>
-          ))}
+      <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[72px] md:my-[120px] lg:my-[145px] xl:my-[190px] px-6 text-dark-grey text-body sm:px-1 grid lg:grid-cols-[1fr_350px] lg:gap-28 xl:gap-32">
+        <div className="lg:ml-auto">
+          <p className="absolute text-heading-l text-[clamp(8.5rem,15.5vw,14.625rem)] text-light-grey opacity-50 hidden md:block -top-[1.8rem] lg:-top-[2.4rem] xl:-top-[3.4rem] left-0">
+            Welcome
+          </p>
+          <div className="border-[0.5px] border-dark-grey opacity-70 w-[65px] absolute left-[1.5rem] md:hidden"></div>
+          <h2 className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] text-dark-blue leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-[800] tracking-[0.075rem] whitespace-nowrap pb-8 pt-[4.125rem]">
+            Welcome to <br /> Arch Studio
+          </h2>
+          <div className="grid gap-6 min-w-[310px] max-w-[572px] lg:max-w-[445px] md:text-[1.125rem]">
+            {welcomeText.map((text, i) => (
+              <p key={i}>{text}</p>
+            ))}
+          </div>
         </div>
+        <div className="h-full max-w-[350px] w-full ml-auto bg-img-5 bg-img mr-[-0.35rem]"></div>
       </section>
+
+      {/* <======== More Info ==========> */}
+      <section></section>
     </Container>
   );
 };

@@ -27,6 +27,10 @@
   background-image: url(/src/assets/home/image-7.png);
 }
 
+.bg-img-5{
+  background-image: url(src/assets/home/image-9.png)
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
