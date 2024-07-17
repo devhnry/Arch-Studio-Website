@@ -138,7 +138,21 @@ export const HomePage = () => {
       </section>
 
       {/* <======== More Info ==========> */}
-      <section></section>
+      <section className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px">
+        <div className="absolute bg-black opacity-[0.42] inset-0"></div>
+        <div className="h-[520px] bg-black bg-img bg-img-6">
+          <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-7 top-[50%] -translate-y-[47%]">
+            <h1 className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
+              Small team,
+              <br /> big ideas
+            </h1>
+            <div className="flex gap-6 items-center bg-dark-blue w-fit px-7 py-5 cursor-pointer">
+              <a href="">About Us</a>
+              <img src="src/assets/icons/icon-arrow-white.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
     </Container>
   );
 };
