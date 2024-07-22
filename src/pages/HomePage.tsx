@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container } from "../components/Container";
+import { CardComponent } from "../components/CardComponent";
 
 export const HomePage = () => {
   const links = ["portfolio", "about us", "contact"];
@@ -121,7 +122,7 @@ export const HomePage = () => {
       {/*<===== Welcome Area =====>  */}
       <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[72px] md:my-[120px] lg:my-[145px] xl:my-[190px] px-6 text-dark-grey text-body sm:px-1 grid lg:grid-cols-[1fr_350px] lg:gap-28 xl:gap-32">
         <div className="lg:ml-auto">
-          <p className="absolute text-heading-l text-[clamp(8.5rem,15.5vw,14.625rem)] text-light-grey opacity-50 hidden md:block -top-[1.8rem] lg:-top-[2.4rem] xl:-top-[3.4rem] left-0">
+          <p className="absolute font-bold tracking-[-0.125rem] text-[clamp(8.5rem,15.5vw+1rem,14.625rem)] text-light-grey opacity-50 hidden md:block -top-[1.8rem] lg:-top-[2.4rem] xl:-top-[3.4rem] left-0">
             Welcome
           </p>
           <div className="border-[0.5px] border-dark-grey opacity-70 w-[65px] absolute left-[1.5rem] md:hidden"></div>
@@ -151,6 +152,13 @@ export const HomePage = () => {
               <img src="src/assets/icons/icon-arrow-white.svg" alt="" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* <========= Featured Section =======>  */}
+      <section className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px] px-5 sm:px-0">
+        <div className="grid ls:grid-cols-3 gap-5">
+          <CardComponent title={"Project Del Sol"} number={1} />
         </div>
       </section>
     </Container>
