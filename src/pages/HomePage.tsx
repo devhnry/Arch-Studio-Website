@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "../components/Container";
 import { CardComponent } from "../components/CardComponent";
 import { Button } from "../components/Button";
+import { FooterMobile } from "../components/FooterMobile";
 
 export const HomePage = () => {
   const links = ["portfolio", "about us", "contact"];
@@ -186,7 +187,7 @@ export const HomePage = () => {
           </div>
         </div>
 
-        <div className="grid ls:grid-cols-3 gap-5">
+        <div className="grid ls:grid-cols-3 gap-5 pb-6">
           {featured.map((card, index) => (
             <CardComponent
               key={index}
@@ -196,6 +197,13 @@ export const HomePage = () => {
             />
           ))}
         </div>
+
+        <Button text="See All" />
+      </section>
+
+      {/* <========== Footer Section =========> */}
+      <section className="relative max-w-[570px] text-dark-blue md:max-w-[1110px] mx-auto font-spartan mt-[140px]">
+        <FooterMobile />
       </section>
     </Container>
   );
