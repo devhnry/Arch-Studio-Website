@@ -13,24 +13,28 @@ export const HomePage = () => {
       lowerTitle: "Paramour",
       details:
         "Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture.",
+      image: 1,
     },
     {
       upperTitle: "Seraph",
       lowerTitle: "Station",
       details:
         "The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.",
+      image: 2,
     },
     {
       upperTitle: "Federal II",
       lowerTitle: "Tower",
       details:
         "A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.",
+      image: 3,
     },
     {
       upperTitle: "Trinity Bank",
       lowerTitle: "Tower",
       details:
         "Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.",
+      image: 4,
     },
   ];
 
@@ -38,6 +42,12 @@ export const HomePage = () => {
     "We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.",
     "Over the past 10 years, we have worked on all kinds of projects. From stations to high-rise buildings, we create spaces that inspire and delight.",
     "We work closely with our clients so that we understand the intricacies of each project. This allows us to work in harmony the surrounding area to create truly stunning projects that will stand the test of time.",
+  ];
+
+  const featured = [
+    { title: "Project Del Sol", imageClass: "bg-img-7" },
+    { title: "228B Tower", imageClass: "bg-img-8" },
+    { title: "Le Prototype", imageClass: "bg-img-9" },
   ];
 
   useEffect(() => {
@@ -120,9 +130,9 @@ export const HomePage = () => {
       </section>
 
       {/*<===== Welcome Area =====>  */}
-      <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[72px] md:my-[120px] lg:my-[145px] xl:my-[190px] px-6 text-dark-grey text-body sm:px-1 grid lg:grid-cols-[1fr_350px] lg:gap-28 xl:gap-32">
+      <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-sparta my-[76px] md:my-[120px] lg:my-[145px] xl:my-[190px] px-6 text-dark-grey text-body sm:px-1 grid lg:grid-cols-[1fr_350px] lg:gap-28 xl:gap-32">
         <div className="lg:ml-auto">
-          <p className="absolute font-bold tracking-[-0.125rem] text-[clamp(8.5rem,15.5vw+1rem,14.625rem)] text-light-grey opacity-50 hidden md:block -top-[1.8rem] lg:-top-[2.4rem] xl:-top-[3.4rem] left-0">
+          <p className="absolute font-bold tracking-[-0.125rem] leading-[-8.5rem] text-[clamp(8.5rem,15.5vw+1rem,14.625rem)] text-light-grey opacity-50 hidden md:block -top-[1.8rem] lg:-top-[2.4rem] xl:-top-[3.4rem] left-0">
             Welcome
           </p>
           <div className="border-[0.5px] border-dark-grey opacity-70 w-[65px] absolute left-[1.5rem] md:hidden"></div>
@@ -156,9 +166,16 @@ export const HomePage = () => {
       </section>
 
       {/* <========= Featured Section =======>  */}
-      <section className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px] px-5 sm:px-0">
+      <section className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px] px-5 s:px-0">
         <div className="grid ls:grid-cols-3 gap-5">
-          <CardComponent title={"Project Del Sol"} number={1} />
+          {featured.map((card, index) => (
+            <CardComponent
+              key={index}
+              title={card.title}
+              number={index + 1}
+              customClass={card.imageClass}
+            />
+          ))}
         </div>
       </section>
     </Container>
