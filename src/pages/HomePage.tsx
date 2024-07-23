@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container } from "../components/Container";
 import { CardComponent } from "../components/CardComponent";
+import { Button } from "../components/Button";
 
 export const HomePage = () => {
   const links = ["portfolio", "about us", "contact"];
@@ -49,6 +50,23 @@ export const HomePage = () => {
     { title: "228B Tower", imageClass: "bg-img-8" },
     { title: "Le Prototype", imageClass: "bg-img-9" },
   ];
+
+  useEffect(() => {
+    // Disable the browser's default scroll restoration
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // Scroll to the top
+    window.scrollTo(0, 0);
+
+    // Optionally, re-enable scroll restoration when component unmounts
+    return () => {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "auto";
+      }
+    };
+  }, []);
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -106,10 +124,7 @@ export const HomePage = () => {
                 {screenDetails[page].details}
               </p>
             </div>
-            <div className="flex gap-6 items-center bg-dark-blue w-fit px-7 py-5 cursor-pointer">
-              <a href="">See our portfolio</a>
-              <img src="src/assets/icons/icon-arrow-white.svg" alt="" />
-            </div>
+            <Button text="See our Portfolio" />
           </div>
           <div className="absolute left-[-49.64px] bottom-0 hidden xl:flex">
             {screens.map((screen) => (
@@ -157,16 +172,20 @@ export const HomePage = () => {
               Small team,
               <br /> big ideas
             </h1>
-            <div className="flex gap-6 items-center bg-dark-blue w-fit px-7 py-5 cursor-pointer">
-              <a href="">About Us</a>
-              <img src="src/assets/icons/icon-arrow-white.svg" alt="" />
-            </div>
+            <Button text="About Us" />
           </div>
         </div>
       </section>
 
       {/* <========= Featured Section =======>  */}
       <section className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px] px-5 s:px-0">
+        <div className="flex justify-between pb-10 md:pb-14">
+          <h4 className="text-dark-blue text-heading-m">Featured</h4>
+          <div className="hidden md:block">
+            <Button text="See All" />
+          </div>
+        </div>
+
         <div className="grid ls:grid-cols-3 gap-5">
           {featured.map((card, index) => (
             <CardComponent
