@@ -48,7 +48,7 @@ export const HomePage = () => {
 
           {/* <===== Hero Area =====> */}
           <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan">
-            <div
+            <div style={{backgroundImage: `url(${screenDetailsArray[page].image})`}}
                 className={`bg-slate-600 bg-img bg-img-${
                     page + 1
                 } min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] relative`}

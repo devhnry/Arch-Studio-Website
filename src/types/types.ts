@@ -12,7 +12,7 @@ export interface screenDetails {
 	upperTitle: string;
 	lowerTitle: string;
 	details: string;
-	image: number;
+	image: string;
 }
 
 export interface AboutCardDetails {
