@@ -8,6 +8,12 @@ import {Link} from "react-router-dom";
 import {Footer} from "../components/Footer.tsx";
 import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 
+import arrow from "../assets/icons/icon-arrow-white.svg"
+
+import projectDelSol from "../assets/home/image-2.png";
+import towerB from "../assets/home/image-3.png"
+import lePrototype from "../assets/home/image-4.png"
+
 export const HomePage = () => {
   const screens = [0, 1, 2, 3];``
   const [page, setPage] = useState(0);
@@ -19,9 +25,9 @@ export const HomePage = () => {
   ];
 
   const featured = [
-    { title: "Project Del Sol", image: "/src/assets/home/image-2.png" },
-    { title: "228B Tower", image: "/src/assets/home/image-3.png" },
-    { title: "Le Prototype", image: "/src/assets/home/image-4.png"},
+    { title: "Project Del Sol", image: projectDelSol },
+    { title: "228B Tower", image: towerB },
+    { title: "Le Prototype", image: lePrototype},
   ];
 
   useDisableScrollRestoration()
@@ -138,7 +144,7 @@ export const HomePage = () => {
             <Link to="/portfolio"
                 className="flex gap-6 items-center md:hidden bg-dark-blue w-full place-content-center text-white px-7 py-5 cursor-pointer">
               <p>See All</p>
-              <img src="src/assets/icons/icon-arrow-white.svg" alt=""/>
+              <img src={arrow} alt=""/>
             </Link>
           </section>
 
