@@ -1,6 +1,9 @@
 import React from "react";
 import {Link, useLocation} from "react-router-dom"
 
+import logoBlack from "../assets/icons/Arch-black.svg"
+import hamburger from "../assets/icons/icon-hamburger.svg"
+
 interface NavBarProps {
 	links: string[];
 }
@@ -36,7 +39,7 @@ const NavBar: React.FC<NavBarProps> = ({ links }) => {
 			<Link to={"/"}>
 				<img
 					className="block"
-					src="src/assets/icons/Arch-black.svg"
+					src={logoBlack}
 					alt="logo"
 				/>
 			</Link>
@@ -52,7 +55,7 @@ const NavBar: React.FC<NavBarProps> = ({ links }) => {
 				</div>
 				<img
 					className="md:hidden"
-					src="src/assets/icons/icon-hamburger.svg"
+					src={hamburger}
 					alt="menu"
 				/>
 			</>
