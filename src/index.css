@@ -1,14 +1,21 @@
-/* @font-face {
-  font-family: "League Spartan", "sans-serif";
-  src: url(/fonts/LeagueSpartan-VariableFont_wght.ttf);
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
-.bg-img{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@layer components {
+  .body-text-style {
+    @apply leading-[-8.5rem] text-[clamp(8.5rem,15.5vw+1rem,14.625rem)];
+  }
+
+  .bg-img{
+    @apply bg-cover bg-center bg-repeat;
+  }
+
+  .input-style{
+    @apply border-b-[2px] placeholder:font-bold placeholder:text-[20px] text-[20px] placeholder:capitalize w-full px-4 pt-10 outline-none border-b-black;
+  }
+
+  #bg-map{
+    @apply bg-[63.75%]
+  }
 }
 
 .bg-img-1{
@@ -33,18 +40,6 @@
 
 .bg-img-6{
   background-image: url(src/assets/home/image-1.png)
-}
-
-.bg-img-7{
-  background-image: url(src/assets/home/image-2.png)
-}
-
-.bg-img-8{
-  background-image: url(src/assets/home/image-3.png)
-}
-
-.bg-img-9{
-  background-image: url(src/assets/home/image-4.png)
 }
 
 @tailwind base;
