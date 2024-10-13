@@ -1,26 +1,26 @@
 import { Button } from "./Button";
 import React from "react";
-
-export interface FooterProps {
-    links: string[]; // links is an array of strings
-}
+import {Link} from "react-router-dom";
+import {FooterProps} from "../types/types.ts";
 
 export const FooterMobile: React.FC<FooterProps> = ({ links }) => {
   return (
     <div className="grid md:hidden place-items-center items-end bg-thin-grey py-12 h-[380px] relative md:px-24">
-      <img
-        className="bg-dark-blue p-4 size-24 absolute top-[-48px]"
-        src="src/assets/icons/Arch-white.svg"
-        alt=""
-      />
-      <div className="grid gap-8 capitalize text-dark-grey font-bold text-body text-[1.125rem]">
-        {links.map((link: string) => (
-          <a key={link} href="">
+        <Link to={"/"}>
+            <img
+                className="bg-dark-blue p-4 size-24 absolute top-[-48px] left-[50%] -translate-x-[50%]"
+                src="src/assets/icons/Arch-white.svg"
+                alt=""
+            />
+        </Link>
+        <div className="grid gap-8 capitalize text-dark-grey font-bold text-body text-[1.125rem]">
+            {links.map((link: string) => (
+                <Link to={`/${link == "about us" ? "about-us" : link}`} key={link}>
             {link}
-          </a>
+          </Link>
         ))}
       </div>
-      <Button text="See Our Portfolio" />
+      <Button linkTo={"/portfolio"} text="See Our Portfolio" />
     </div>
   );
 };
