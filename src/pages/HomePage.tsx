@@ -2,44 +2,15 @@ import { useEffect, useState } from "react";
 import { Container } from "../components/Container";
 import { CardComponent } from "../components/CardComponent";
 import { Button } from "../components/Button";
-import { FooterMobile } from "../components/FooterMobile";
-import {FooterDesktop} from "../components/FooterDesktop.tsx";
+import NavBar from "../components/Navbar.tsx";
+import {links, screenDetailsArray} from "../libs/constants.ts";
+import {Link} from "react-router-dom";
+import {Footer} from "../components/Footer.tsx";
+import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 
 export const HomePage = () => {
-  const links = ["portfolio", "about us", "contact"];
-  const screens = [0, 1, 2, 3];
+  const screens = [0, 1, 2, 3];``
   const [page, setPage] = useState(0);
-
-  const screenDetails = [
-    {
-      upperTitle: "Project",
-      lowerTitle: "Paramour",
-      details:
-        "Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture.",
-      image: 1,
-    },
-    {
-      upperTitle: "Seraph",
-      lowerTitle: "Station",
-      details:
-        "The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.",
-      image: 2,
-    },
-    {
-      upperTitle: "Federal II",
-      lowerTitle: "Tower",
-      details:
-        "A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.",
-      image: 3,
-    },
-    {
-      upperTitle: "Trinity Bank",
-      lowerTitle: "Tower",
-      details:
-        "Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.",
-      image: 4,
-    },
-  ];
 
   const welcomeText = [
     "We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.",
@@ -48,28 +19,12 @@ export const HomePage = () => {
   ];
 
   const featured = [
-    { title: "Project Del Sol", imageClass: "bg-img-7" },
-    { title: "228B Tower", imageClass: "bg-img-8" },
-    { title: "Le Prototype", imageClass: "bg-img-9" },
+    { title: "Project Del Sol", image: "/src/assets/home/image-2.png" },
+    { title: "228B Tower", image: "/src/assets/home/image-3.png" },
+    { title: "Le Prototype", image: "/src/assets/home/image-4.png"},
   ];
 
-  useEffect(() => {
-    // Disable the browser's default scroll restoration
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
-
-    // Scroll to the top
-    window.scrollTo(0, 0);
-
-    // Optionally, re-enable scroll restoration when component unmounts
-    return () => {
-      if ("scrollRestoration" in window.history) {
-        window.history.scrollRestoration = "auto";
-      }
-    };
-  }, []);
-
+  useDisableScrollRestoration()
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
     if (window.innerWidth > 1024) {
@@ -83,32 +38,7 @@ export const HomePage = () => {
   return (
       <>
         <Container>
-          <nav
-              className="p-6 md:py-12 flex justify-between md:justify-normal gap-20 items-center max-w-[calc(570px+46px)] md:max-w-[1110px] md:px-0 mx-auto">
-            <img
-                className="block"
-                src="src/assets/icons/Arch-black.svg"
-                alt="logo"
-            />
-            <>
-              <div className="hidden md:flex gap-14 capitalize text-medium-grey text-body font-bold">
-                {links.map((link) => (
-                    <a
-                        className="hover:text-dark-blue cursor-pointer transition-colors"
-                        key={link}
-                        href={`/${link}`}
-                    >
-                      {link}
-                    </a>
-                ))}
-              </div>
-              <img
-                  className="md:hidden"
-                  src="src/assets/icons/icon-hamburger.svg"
-                  alt="menu"
-              />
-            </>
-          </nav>
+          <NavBar links={links}/>
 
           {/* <===== Hero Area =====> */}
           <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan">
@@ -121,14 +51,14 @@ export const HomePage = () => {
               <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[50%] -translate-y-[47%]">
                 <div className="grid gap-2">
                   <h1 className="leading-[clamp(3rem,9.14vw+1rem,5rem)] text-[clamp(3.2rem,9.14vw+1rem,6rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
-                    {screenDetails[page].upperTitle}
-                    <br/> {screenDetails[page].lowerTitle}
+                    {screenDetailsArray[page].upperTitle}
+                    <br/> {screenDetailsArray[page].lowerTitle}
                   </h1>
                   <p className="max-w-[450px] min-w-[300px] pr-8">
-                    {screenDetails[page].details}
+                    {screenDetailsArray[page].details}
                   </p>
                 </div>
-                <Button text="See our Portfolio"/>
+                <Button linkTo={"/portfolio"} text="See our Portfolio"/>
               </div>
               <div className="absolute left-[-49.64px] bottom-0 hidden xl:flex">
                 {screens.map((screen) => (
@@ -175,11 +105,11 @@ export const HomePage = () => {
             <div className="absolute bg-black opacity-[0.42] inset-0"></div>
             <div className="h-[520px] bg-black bg-img bg-img-6">
               <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-7 top-[50%] -translate-y-[47%]">
-                <h1 className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
+                <h3 className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
                   Small team,
                   <br/> big ideas
-                </h1>
-                <Button text="About Us"/>
+                </h3>
+                <Button linkTo={"/about-us"} text="About Us"/>
               </div>
             </div>
           </section>
@@ -190,7 +120,7 @@ export const HomePage = () => {
             <div className="flex justify-between pb-10 md:pb-14">
               <h4 className="text-dark-blue text-heading-m">Featured</h4>
               <div className="hidden md:block">
-                <Button text="See All"/>
+                <Button linkTo={"/portfolio"} text="See All"/>
               </div>
             </div>
 
@@ -200,24 +130,20 @@ export const HomePage = () => {
                       key={index}
                       title={card.title}
                       number={index + 1}
-                      customClass={card.imageClass}
+                      image={card.image}
                   />
               ))}
             </div>
 
-            <div
+            <Link to="/portfolio"
                 className="flex gap-6 items-center md:hidden bg-dark-blue w-full place-content-center text-white px-7 py-5 cursor-pointer">
-              <a href="">See All</a>
+              <p>See All</p>
               <img src="src/assets/icons/icon-arrow-white.svg" alt=""/>
-            </div>
+            </Link>
           </section>
 
         </Container>
-        {/* <========== Footer Section =========> */}
-        <footer className="relative max-w-[570px] text-dark-blue md:max-w-[1110px] mx-auto font-spartan mt-[140px]">
-          <FooterMobile links={links}/>
-          <FooterDesktop links={links} />
-        </footer>
+        <Footer />
       </>
   );
 };
