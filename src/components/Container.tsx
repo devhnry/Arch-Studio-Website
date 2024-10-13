@@ -6,6 +6,6 @@ interface Props {
 
 export const Container: FC<Props> = ({ children }) => {
   return (
-    <main className="max-w-[1440px] w-full mx-auto md:px-24">{children}</main>
+    <main className="max-w-[1440px] w-full mx-auto md:px-24 relative">{children}</main>
   );
 };
