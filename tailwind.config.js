@@ -68,8 +68,10 @@ export default {
         red: "hsla(0, 69%, 61%, 1)",
       },
       screens: {
+        xsm: "415px",
         s: "600px",
         ls: "900px",
+        ld: "1065px"
       },
     },
   },
