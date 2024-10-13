@@ -2,6 +2,7 @@ import {Button} from "./Button.tsx";
 import React from "react";
 import {Link} from "react-router-dom";
 import {FooterProps} from "../types/types.ts";
+import logoWhite from "../assets/icons/Arch-white.svg"
 
 export const FooterDesktop: React.FC<FooterProps> = ({links}) => {
 	return <div className="relative hidden md:grid bg-thin-grey w-[calc(100%-110px)] md:max-w-[1110px] h-[120px]">
@@ -9,7 +10,7 @@ export const FooterDesktop: React.FC<FooterProps> = ({links}) => {
 			<Link to={'/'}>
 				<img
 					className="bg-dark-blue p-4 size-[120px]"
-					src="src/assets/icons/Arch-white.svg"
+					src={logoWhite}
 					alt=""
 				/>
 			</Link>

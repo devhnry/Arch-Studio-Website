@@ -6,6 +6,8 @@ import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 import {Footer} from "../components/Footer.tsx";
 import {ContactInfo} from "../components/ContactInfo.tsx";
 import {ContactForm} from "../components/ContactForm.tsx";
+import heroPic from "../assets/contact/image-header.png"
+import map from "../assets/contact/image-map.png"
 
 export const ContactUsPage = () => {
 
@@ -27,7 +29,7 @@ export const ContactUsPage = () => {
 	return <>
 		<Container>
 			<Navbar links={links}/>
-			<HeaderArea page={`Contact`} url={`/src/assets/contact/image-header.png`}
+			<HeaderArea page={`Contact`} url={heroPic}
 						title={`Tell us about your project`}
 						description={`We’d love to hear more about your project. Please, leave a message below or give us a call. We have two offices, one in Texas and one in Tennessee. If you find yourself nearby, come say hello!`}/>
 
@@ -46,7 +48,7 @@ export const ContactUsPage = () => {
 
 			{/*======== MAP ======= */}
 			<section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan my-[72px] md:my-[120px] lg:my-[145px] xl:my-[190px">
-				<div id={`bg-map`} style={{backgroundImage: "url('/src/assets/contact/image-map.png')"}} className="bg-black bg-img h-[370px] transition-all duration-300 relative">
+				<div id={`bg-map`} style={{backgroundImage: `url(${map})`}} className="bg-black bg-img h-[370px] transition-all duration-300 relative">
 				</div>
 			</section>
 

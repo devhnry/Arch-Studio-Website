@@ -5,6 +5,8 @@ import {HeaderArea} from "../components/HeaderArea.tsx";
 import {AboutCardComponent} from "../components/AboutCardComponent.tsx";
 import {Footer} from "../components/Footer.tsx";
 import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
+import heroPic from "../assets/about/image-header.png"
+import bodyPic from "../assets/about/image-body.png"
 
 export const AboutUsPage = () => {
 	useDisableScrollRestoration()
@@ -14,7 +16,7 @@ export const AboutUsPage = () => {
 				<Navbar links={links} />
 
 				{/*======== HERO AREA ========== */}
-				<HeaderArea title={`Your team of professionals`} description={`Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.`} url={`/src/assets/about/image-header.png`} page={`About`} />
+				<HeaderArea title={`Your team of professionals`} description={`Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.`} url={heroPic} page={`About`} />
 
 
 				{/*========== OUR HERITAGE ========== */}
@@ -31,7 +33,7 @@ export const AboutUsPage = () => {
 								<p className={`text-body`}>Our small team of world-class professionals provides input on every project.</p>
 							</div>
 						</div>
-						<div style={{backgroundImage: "url('/src/assets/about/image-body.png')"}} className="max-w-[500px] ml-auto h-full w-full bg-img hidden md:block"></div>
+						<div style={{backgroundImage: `url(${bodyPic})`}} className="max-w-[500px] ml-auto h-full w-full bg-img hidden md:block"></div>
 					</div>
 				</section>
 

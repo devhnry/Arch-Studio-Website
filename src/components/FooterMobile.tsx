@@ -2,6 +2,7 @@ import { Button } from "./Button";
 import React from "react";
 import {Link} from "react-router-dom";
 import {FooterProps} from "../types/types.ts";
+import logoWhite from "../assets/icons/Arch-white.svg"
 
 export const FooterMobile: React.FC<FooterProps> = ({ links }) => {
   return (
@@ -9,7 +10,7 @@ export const FooterMobile: React.FC<FooterProps> = ({ links }) => {
         <Link to={"/"}>
             <img
                 className="bg-dark-blue p-4 size-24 absolute top-[-48px] left-[50%] -translate-x-[50%]"
-                src="src/assets/icons/Arch-white.svg"
+                src={logoWhite}
                 alt=""
             />
         </Link>

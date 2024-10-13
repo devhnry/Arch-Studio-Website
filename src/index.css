@@ -19,27 +19,27 @@
 }
 
 .bg-img-1{
-  background-image: url(/src/assets/home/image-8.png);
+  background-image: url(./assets/home/image-8.png);
 }
 
 .bg-img-2{
-  background-image: url(/src/assets/home/image-5.png);
+  background-image: url(./assets/home/image-5.png);
 }
 
 .bg-img-3{
-  background-image: url(/src/assets/home/image-6.png);
+  background-image: url(./assets/home/image-6.png);
 }
 
 .bg-img-4{
-  background-image: url(/src/assets/home/image-7.png);
+  background-image: url(./assets/home/image-7.png);
 }
 
 .bg-img-5{
-  background-image: url(src/assets/home/image-9.png)
+  background-image: url(./assets/home/image-9.png)
 }
 
 .bg-img-6{
-  background-image: url(src/assets/home/image-1.png)
+  background-image: url(./assets/home/image-1.png)
 }
 
 @tailwind base;
