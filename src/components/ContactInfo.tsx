@@ -1,5 +1,6 @@
 import React from 'react';
 import {ContactInfoDetails} from "../types/types.ts";
+import arrow from "../assets/icons/icon-arrow.svg"
 
 interface ContactInfoProps {
 	name: string;
@@ -19,7 +20,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ name, info}) => {
 			</div>
 				<a className={`flex flex-row ml-auto w-fit gap-2 items-center font-bold text-dark-blue pt-10 pl-1 leading-tight ls:ml-1 group cursor-pointer`}>
 					Link to Map
-					<img className={`group-hover:rotate-[30deg] transition-all duration-300`} src={`/src/assets/icons/icon-arrow.svg`} alt=""/>
+					<img className={`group-hover:rotate-[30deg] transition-all duration-300`} src={arrow} alt=""/>
 				</a>
 		</div>
 	);

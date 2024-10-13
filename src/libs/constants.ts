@@ -1,5 +1,23 @@
 import {PortfolioCard, screenDetails} from "../types/types.ts";
 
+import seraphStation from "../assets/portfolio/image-SeraphStation.png";
+import eeboxBuilding from "../assets/portfolio/image-Eebox.png";
+import federalIITower from "../assets/portfolio/image-FederalTowerII.png";
+import projectDelSol from "../assets/portfolio/image-ProjectDelSol.png";
+import lePrototype from "../assets/portfolio/image-Prototype.png";
+import tower228B from "../assets/portfolio/image-228BTower.png";
+import grandEdelweissHotel from "../assets/portfolio/image-Hotel.png";
+import netcryTower from "../assets/portfolio/image-Netcry.png";
+import hypers from "../assets/portfolio/image-Hypers.png";
+import sxivTowers from "../assets/portfolio/image-SXIVTower.png";
+import trinityBankTower from "../assets/portfolio/image-BankTower.png";
+import projectParamour from "../assets/portfolio/image-ProjectParamour.png";
+
+import jakeRichards from "../assets/about/image-suit1.png";
+import thompsonSmith from "../assets/about/image-suit2.png";
+import jacksonRourke from "../assets/about/image-suit3.png";
+import mariaSimpson from "../assets/about/image-suit4.png";
+
 export const links = ["portfolio", "about us", "contact"];
 
 export const screenDetailsArray:screenDetails[] = [
@@ -37,81 +55,85 @@ export const portfolioArray:PortfolioCard[] = [
 	{
 		title: "Seraph Station",
 		date: "September 2019",
-		url: "./src/assets/portfolio/image-SeraphStation.png",
+		url: seraphStation
 	},
 	{
 		title: "Eebox Building",
 		date: "August 2017",
-		url: "./src/assets/portfolio/image-Eebox.png",
+		url: eeboxBuilding,
 	},
 	{
 		title: "Federal II Tower",
 		date: "March 2017",
-		url: "./src/assets/portfolio/image-FederalTowerII.png",
+		url: federalIITower,
 	},
 	{
 		title: "Project Del Sol",
 		date: "January 2016",
-		url: "./src/assets/portfolio/image-ProjectDelSol.png",
+		url: projectDelSol,
 	},
 	{
 		title: "Le Prototype",
 		date: "October 2015",
-		url: "./src/assets/portfolio/image-Prototype.png",
+		url: lePrototype,
 	},
 	{
 		title: "228B Tower",
 		date: "April 2015",
-		url: "./src/assets/portfolio/image-228BTower.png",
+		url: tower228B,
 	},
 	{
 		title: "Grand Edelweiss Hotel",
 		date: "December 2013",
-		url: "./src/assets/portfolio/image-Hotel.png",
+		url: grandEdelweissHotel,
 	},
 	{
 		title: "Netcry Tower",
 		date: "August 2012",
-		url: "./src/assets/portfolio/image-Netcry.png",
+		url: netcryTower,
 	},
 	{
 		title: "Hypers",
 		date: "January 2012",
-		url: "./src/assets/portfolio/image-Hypers.png",
+		url: hypers,
 	},
 	{
 		title: "SXIV Towers",
 		date: "March 2011",
-		url: "./src/assets/portfolio/image-SXIVTower.png",
+		url: sxivTowers,
 	},
 	{
 		title: "Trinity Bank Tower",
 		date: "September 2010",
-		url: "./src/assets/portfolio/image-BankTower.png",
+		url: trinityBankTower,
 	},
 	{
 		title: "Project Paramour",
 		date: "February 2008",
-		url: "./src/assets/portfolio/image-ProjectParamour.png",
+		url: projectParamour,
 	}
+
 ];
 
-export const leaderInfo =  [
+export const leaderInfo = [
 	{
 		name: "Jake Richards",
 		title: "Chief Architect",
-		url: "./src/assets/about/image-suit1.png"
-	}, {
+		url: jakeRichards,
+	},
+	{
 		name: "Thompson Smith",
 		title: "Head of Finance",
-		url: "./src/assets/about/image-suit2.png",
-	} ,{
+		url: thompsonSmith,
+	},
+	{
 		name: "Jackson Rourke",
 		title: "Lead Designer",
-		url: "./src/assets/about/image-suit3.png",
-	} , {
+		url: jacksonRourke,
+	},
+	{
 		name: "Maria Simpson",
 		title: "Senior Architect",
-		url: "./src/assets/about/image-suit4.png",
+		url: mariaSimpson,
 	}
-]
+];
