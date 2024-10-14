@@ -6,8 +6,8 @@ import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 import {Footer} from "../components/Footer.tsx";
 import {ContactInfo} from "../components/ContactInfo.tsx";
 import {ContactForm} from "../components/ContactForm.tsx";
-import heroPic from "../assets/contact/image-header.png"
-import map from "../assets/contact/image-map.png"
+import heroPic from "../assets/contact/image-header.webp"
+import map from "../assets/contact/image-map.webp"
 
 export const ContactUsPage = () => {
 

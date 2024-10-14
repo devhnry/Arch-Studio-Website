@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer components {
   .body-text-style {
     @apply leading-[-8.5rem] text-[clamp(8.5rem,15.5vw+1rem,14.625rem)];
@@ -17,31 +21,3 @@
     @apply bg-[63.75%]
   }
 }
-
-.bg-img-1{
-  background-image: url(./assets/home/image-8.png);
-}
-
-.bg-img-2{
-  background-image: url(./assets/home/image-5.png);
-}
-
-.bg-img-3{
-  background-image: url(./assets/home/image-6.png);
-}
-
-.bg-img-4{
-  background-image: url(./assets/home/image-7.png);
-}
-
-.bg-img-5{
-  background-image: url(./assets/home/image-9.png)
-}
-
-.bg-img-6{
-  background-image: url(./assets/home/image-1.png)
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
