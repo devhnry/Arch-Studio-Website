@@ -10,7 +10,7 @@
   }
 
   .bg-img{
-    @apply bg-cover bg-center bg-repeat;
+    @apply bg-cover bg-center bg-repeat bg-[linear-gradient(135deg,#e66465,#9198e5)]
   }
 
   .input-style{
@@ -19,5 +19,9 @@
 
   #bg-map{
     @apply bg-[63.75%]
+  }
+
+  .triangle{
+    @apply w-0 h-0 border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent border-b-[100px] border-white
   }
 }

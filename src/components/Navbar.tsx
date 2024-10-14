@@ -1,6 +1,8 @@
 import React from "react";
 import {Link, useLocation} from "react-router-dom"
 
+import { motion as m } from 'framer-motion';
+
 import logoBlack from "../assets/icons/Arch-black.svg"
 import hamburger from "../assets/icons/icon-hamburger.svg"
 
@@ -32,7 +34,7 @@ const NavBar: React.FC<NavBarProps> = ({ links }) => {
 				<div className={`w-[0.6px] bg-black h-[104px]`}></div>
 				<div className={`grid gap-[2.5px] items-center`}>
 					{pageLink.split("").map((letter, index) => (
-						<p key={index} className={`inline-block rotate-[90deg] uppercase text-[14px] pt-2`}>{letter}</p>
+						<m.p initial={{ opacity: 0, scale: 0, rotate: 90 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} key={index} className={`inline-block rotate-[90deg] uppercase text-[14px] pt-2`}>{letter}</m.p>
 					))}
 				</div>
 			</div>
