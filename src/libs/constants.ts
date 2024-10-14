@@ -1,27 +1,27 @@
 import {PortfolioCard, screenDetails} from "../types/types.ts";
 
-import seraphStation from "../assets/portfolio/image-SeraphStation.png";
-import eeboxBuilding from "../assets/portfolio/image-Eebox.png";
-import federalIITower from "../assets/portfolio/image-FederalTowerII.png";
-import projectDelSol from "../assets/portfolio/image-ProjectDelSol.png";
-import lePrototype from "../assets/portfolio/image-Prototype.png";
-import tower228B from "../assets/portfolio/image-228BTower.png";
-import grandEdelweissHotel from "../assets/portfolio/image-Hotel.png";
-import netcryTower from "../assets/portfolio/image-Netcry.png";
-import hypers from "../assets/portfolio/image-Hypers.png";
-import sxivTowers from "../assets/portfolio/image-SXIVTower.png";
-import trinityBankTower from "../assets/portfolio/image-BankTower.png";
-import projectParamour from "../assets/portfolio/image-ProjectParamour.png";
+import seraphStation from "../assets/portfolio/image-SeraphStation.webp";
+import eeboxBuilding from "../assets/portfolio/image-Eebox.webp";
+import federalIITower from "../assets/portfolio/image-FederalTowerII.webp";
+import projectDelSol from "../assets/portfolio/image-ProjectDelSol.webp";
+import lePrototype from "../assets/portfolio/image-Prototype.webp";
+import tower228B from "../assets/portfolio/image-228BTower.webp";
+import grandEdelweissHotel from "../assets/portfolio/image-Hotel.webp";
+import netcryTower from "../assets/portfolio/image-Netcry.webp";
+import hypers from "../assets/portfolio/image-Hypers.webp";
+import sxivTowers from "../assets/portfolio/image-SXIVTower.webp";
+import trinityBankTower from "../assets/portfolio/image-BankTower.webp";
+import projectParamour from "../assets/portfolio/image-ProjectParamour.webp";
 
-import jakeRichards from "../assets/about/image-suit1.png";
-import thompsonSmith from "../assets/about/image-suit2.png";
-import jacksonRourke from "../assets/about/image-suit3.png";
-import mariaSimpson from "../assets/about/image-suit4.png";
+import jakeRichards from "../assets/about/image-suit1.webp";
+import thompsonSmith from "../assets/about/image-suit2.webp";
+import jacksonRourke from "../assets/about/image-suit3.webp";
+import mariaSimpson from "../assets/about/image-suit4.webp";
 
-import bgImg1 from "../assets/home/image-8.png";
-import bgImg2 from "../assets/home/image-5.png";
-import bgImg3 from "../assets/home/image-6.png";
-import bgImg4 from "../assets/home/image-7.png";
+import bgImg1 from "../assets/home/image-8.webp";
+import bgImg2 from "../assets/home/image-5.webp";
+import bgImg3 from "../assets/home/image-6.webp";
+import bgImg4 from "../assets/home/image-7.webp";
 
 
 export const links = ["portfolio", "about us", "contact"];

@@ -10,9 +10,13 @@ import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 
 import arrow from "../assets/icons/icon-arrow-white.svg"
 
-import projectDelSol from "../assets/home/image-2.png";
-import towerB from "../assets/home/image-3.png"
-import lePrototype from "../assets/home/image-4.png"
+import projectDelSol from "../assets/home/image-2.webp";
+import towerB from "../assets/home/image-3.webp"
+import lePrototype from "../assets/home/image-4.webp"
+
+import image9 from "../assets/home/image-9.webp"
+import image1 from "../assets/home/image-1.webp"
+
 
 export const HomePage = () => {
   const screens = [0, 1, 2, 3];``
@@ -102,14 +106,14 @@ export const HomePage = () => {
                 ))}
               </div>
             </div>
-            <div className="h-full max-w-[350px] w-full ml-auto bg-img-5 bg-img mr-[-0.35rem]"></div>
+            <div style={{backgroundImage: `url(${image9})`}} className="h-full max-w-[350px] w-full ml-auto bg-img mr-[-0.35rem]"></div>
           </section>
 
           {/* <======== More Info ==========> */}
           <section
               className="relative max-w-[570px] text-white md:max-w-[1110px] mx-auto font-spartan mb-[72px] md:mb-[120px] lg:mb-[145px] xl:mb-[190px">
             <div className="absolute bg-black opacity-[0.42] inset-0"></div>
-            <div className="h-[520px] bg-black bg-img bg-img-6">
+            <div style={{backgroundImage: `url(${image1})`}} className="h-[520px] bg-black bg-img">
               <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-7 top-[50%] -translate-y-[47%]">
                 <h3 className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
                   Small team,
@@ -144,7 +148,7 @@ export const HomePage = () => {
             <Link to="/portfolio"
                 className="flex gap-6 items-center md:hidden bg-dark-blue w-full place-content-center text-white px-7 py-5 cursor-pointer">
               <p>See All</p>
-              <img src={arrow} alt=""/>
+              <img loading="lazy" src={arrow} alt=""/>
             </Link>
           </section>
 

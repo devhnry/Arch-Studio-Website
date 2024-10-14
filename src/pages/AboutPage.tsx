@@ -5,8 +5,8 @@ import {HeaderArea} from "../components/HeaderArea.tsx";
 import {AboutCardComponent} from "../components/AboutCardComponent.tsx";
 import {Footer} from "../components/Footer.tsx";
 import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
-import heroPic from "../assets/about/image-header.png"
-import bodyPic from "../assets/about/image-body.png"
+import heroPic from "../assets/about/image-header.webp"
+import bodyPic from "../assets/about/image-body.webp"
 
 export const AboutUsPage = () => {
 	useDisableScrollRestoration()
