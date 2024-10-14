@@ -61,6 +61,7 @@ export const ContactForm = () => {
 					</div> ))
 			}
 			<button type={"submit"} className={`bg-black p-4 -mt-[8.5px] block ml-auto`}>
+				<span className={`sr-only`}>Submit</span>
 				<img src={arrow} alt=""/>
 			</button>
 		</form>

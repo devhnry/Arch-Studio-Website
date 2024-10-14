@@ -11,7 +11,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ name, info}) => {
 	return (
 		<div className={`text-dark-grey w-full xsm:grid grid-cols-2 ls:grid-cols-1`}>
 			<div>
-				<h4 className={`font-bold text-[1.125rem] pb-4 capitalize`}>{name.split("-").map(n => (n + " "))}</h4>
+				<h3 className={`font-bold text-[1.125rem] pb-4 capitalize`}>{name.split("-").map(n => (n + " "))}</h3>
 				{Object.entries(info).map(([key, value]) => (
 					<div key={key}>
 						<p className={`capitalize whitespace-nowrap`}>{key} :{`\t\t`} <span className={key === "address" ? `capitalize` : `lowercase`}>{value}</span></p>

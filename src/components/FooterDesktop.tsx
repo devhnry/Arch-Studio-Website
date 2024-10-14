@@ -8,6 +8,7 @@ export const FooterDesktop: React.FC<FooterProps> = ({links}) => {
 	return <div className="relative hidden md:grid bg-thin-grey w-[calc(100%-110px)] md:max-w-[1110px] h-[120px]">
 		<div className={`flex flex-row gap-10 items-center`}>
 			<Link to={'/'}>
+				<p className={`sr-only`}>Home</p>
 				<img
 					className="bg-dark-blue p-4 size-[120px]"
 					src={logoWhite}
