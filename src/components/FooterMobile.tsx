@@ -8,6 +8,7 @@ export const FooterMobile: React.FC<FooterProps> = ({ links }) => {
   return (
     <div className="grid md:hidden place-items-center items-end bg-thin-grey py-12 h-[380px] relative md:px-24">
         <Link to={"/"}>
+            <p className={`sr-only`}>Home</p>
             <img
                 className="bg-dark-blue p-4 size-24 absolute top-[-48px] left-[50%] -translate-x-[50%]"
                 src={logoWhite}
