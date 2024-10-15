@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
 import {Footer} from "../components/Footer.tsx";
 import useDisableScrollRestoration from "../hooks/useScrollRestoration.ts";
 
+import { AnimatePresence, motion as m} from "framer-motion";
+
 import arrow from "../assets/icons/icon-arrow-white.svg"
 
 import projectDelSol from "../assets/home/image-2.webp";
@@ -19,6 +21,7 @@ import image1 from "../assets/home/image-1.webp"
 
 
 export const HomePage = () => {
+
   const screens = [0, 1, 2, 3];``
   const [page, setPage] = useState(0);
 
@@ -37,7 +40,7 @@ export const HomePage = () => {
   useDisableScrollRestoration()
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth < 1024) {
       interval = setInterval(() => {
         setPage((prevIndex) => (prevIndex + 1) % screens.length);
       }, 5000);
@@ -45,30 +48,86 @@ export const HomePage = () => {
     return () => clearInterval(interval);
   }, [screens.length]);
 
+  // Preload images when the component mounts
+  useEffect(() => {
+    const images = screenDetailsArray.map(screen => screen.image);
+    images.forEach(image => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
+
+
   return (
       <>
         <Container>
           <NavBar links={links}/>
 
           {/* <===== Hero Area =====> */}
-          <section className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan">
-            <div style={{backgroundImage: `url(${screenDetailsArray[page].image})`}}
+          <m.section initial={{opacity:0}} animate={{opacity:1, transition: {
+              delay: 0.5, ease: [0.6, 0.05, 0.01, 0.9],
+              duration: 0.5,
+            },}} className="relative max-w-[570px] md:max-w-[1110px] mx-auto font-spartan">
+            <m.div
+                initial={{opacity:0}}
+                animate={{opacity:1, transition: {
+                delay: 0.5, ease: [0.6, 0.05, 0.01, 0.9],
+                duration: 0.7,
+              },}}
+                exit={{opacity: 0}}
+                style={{backgroundImage: `url(${screenDetailsArray[page].image})`}}
                 className={`bg-slate-600 bg-img bg-img-${
                     page + 1
                 } min-h-[564px] w-full mx-auto h-[calc(100vh-136px)] max-h-[734px] text-white text-body md:text-[1.125rem] relative`}
             >
               <div className="absolute bg-black opacity-[0.42] inset-0"></div>
-              <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[50%] -translate-y-[47%]">
+              <div className="absolute left-[25%] -translate-x-[25%] p-6 grid gap-14 top-[50%] -translate-y-[47%] h-[460px] items-start">
+                <AnimatePresence>
                 <div className="grid gap-2">
-                  <h1 className="leading-[clamp(3rem,9.14vw+1rem,5rem)] text-[clamp(3.2rem,9.14vw+1rem,6rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
-                    {screenDetailsArray[page].upperTitle}
-                    <br/> {screenDetailsArray[page].lowerTitle}
-                  </h1>
-                  <p className="max-w-[450px] min-w-[300px] pr-8">
+                  <div className={`flex flex-col gap-1 lg:gap-2 leading-[clamp(3rem,7.14vw+1rem,5rem)] text-[clamp(3.2rem,9.14vw+1rem,6rem)] font-bold tracking-[0.075rem] whitespace-nowrap`}>
+                    <m.div className={`flex flex-row`}>
+                      {screenDetailsArray[page].upperTitle.split("").map((l, index) => (
+                           (
+                              <m.h1 key={`upper-${page}-${index}`}
+                                    initial={{y: 35, opacity: 0, scale: 0.9}}
+                                    animate={{
+                                      y:0, opacity: 1, scale: 1, transition: {
+                                        duration: 0.8,
+                                        delay: index * 0.15
+                                      }
+                                    }}
+                              >{l === " " ? '\u00A0' : l}</m.h1>
+                          )
+                      ))}
+
+                    </m.div>
+                    <m.div className={`flex flex-row overflow-hidden`}>
+                      {screenDetailsArray[page].lowerTitle.split("").map((l, index) => (
+                          <m.h1 key={`lower-${page}-${index}`}
+                                 initial={{y: 35, opacity: 0, scale: 0.9}}
+                                animate={{
+                                  y: 0, opacity: 1, scale: 1, transition: {
+                                    duration: 0.8,
+                                    delay: (index) * 0.15
+                                  }
+                                }}
+                          >{l}</m.h1>
+                      ))}
+                    </m.div>
+                  </div>
+                <AnimatePresence>
+                  <m.p key={`description-${page}`} initial={{opacity: 0, y:8 }}
+                       animate={{opacity: 1, y:0,  transition: {
+                          duration: 0.5,
+                          delay: 0.5
+                       }}}
+                       exit={{opacity:0, y:-8}} className="max-w-[450px] min-w-[300px] pr-8">
                     {screenDetailsArray[page].details}
-                  </p>
+                  </m.p>
+                </AnimatePresence>
                 </div>
-                <Button linkTo={"/portfolio"} text="See our Portfolio"/>
+                </AnimatePresence>
+                <Button page={page} linkTo={"/portfolio"} text="See our Portfolio"/>
               </div>
               <div className="absolute left-[-49.64px] bottom-0 hidden xl:flex">
                 {screens.map((screen) => (
@@ -85,8 +144,8 @@ export const HomePage = () => {
                     </p>
                 ))}
               </div>
-            </div>
-          </section>
+            </m.div>
+          </m.section>
 
           {/*<===== Welcome Area =====>  */}
           <section
