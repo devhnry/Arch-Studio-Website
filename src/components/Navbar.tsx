@@ -14,6 +14,29 @@ const NavBar: React.FC<NavBarProps> = ({ links }) => {
 	const location = useLocation()
 	let pageLink: string;
 
+	const container = {
+		hidden: { opacity: 1, scale: 0 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				delayChildren: 0.3,
+				staggerChildren: 0.2
+			}
+		}
+	};
+
+	const item = {
+		hidden: { y: 4, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1
+		},
+		transition: {
+			duration: 0.3
+		}
+	};
+
 	switch (location.pathname) {
 		case "/":
 			pageLink = "home"
@@ -32,29 +55,31 @@ const NavBar: React.FC<NavBarProps> = ({ links }) => {
 			<div
 				className={`hidden absolute -top-[12px] -left-[50px] md:grid grid-rows-[minmax(104px,104px)_auto] items-start gap-y-8 opacity-50`}>
 				<div className={`w-[0.6px] bg-black h-[104px]`}></div>
-				<div className={`grid gap-[2.5px] items-center`}>
+				<m.div variants={container} initial="hidden" animate="visible"  className={`grid gap-[2.5px] items-center`}>
 					{pageLink.split("").map((letter, index) => (
-						<m.p initial={{ opacity: 0, scale: 0, rotate: 90 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} key={index} className={`inline-block rotate-[90deg] uppercase text-[14px] pt-2`}>{letter}</m.p>
+						<m.p variants={item} initial={{ opacity: 0, scale: 0, rotate: 90 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} key={index + `${letter}`} className={`inline-block rotate-[90deg] uppercase text-[14px] pt-2`}>{letter}</m.p>
 					))}
-				</div>
+				</m.div>
 			</div>
 			<Link to={"/"}>
-				<img
+				<m.img
+					initial={{scale: 0.75}}
+					animate={{scale: 1, transition: { duration: 1.4 }}}
 					className="block"
 					src={logoBlack}
 					alt="logo"
 				/>
 			</Link>
 			<>
-				<div className="hidden md:flex gap-14 capitalize text-medium-grey text-body xl:text-[1.235rem] font-bold">
+				<m.div variants={container} initial="hidden" animate="visible"  className="hidden md:flex gap-14 capitalize text-medium-grey text-body xl:text-[1.235rem] font-bold">
 					{links.map((link) => (
-						<Link className="hover:text-dark-blue cursor-pointer transition-colors"
-							key={link}
-							to={`/${link == "about us" ? "about-us" : link}`} >
-							{link}
-						</Link>
+						<m.div key={link} variants={item}>
+							<Link className="hover:text-dark-blue cursor-pointer transition-colors" key={link} to={`/${link == "about us" ? "about-us" : link}`} >
+								{link}
+							</Link>
+						</m.div>
 					))}
-				</div>
+				</m.div>
 				<img
 					className="md:hidden"
 					src={hamburger}
