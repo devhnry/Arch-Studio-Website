@@ -2,6 +2,8 @@ import arrow from "../assets/icons/icon-arrow-white.svg";
 import {FieldValues, useForm} from "react-hook-form";
 import {useEffect, useState} from "react";
 
+import {motion as m} from "framer-motion"
+
 export const ContactForm = () => {
 	const formInfo: string[] = ['name', 'email', 'message']
 	const errorStyle = "placeholder:opacity-75 placeholder:text-red border-b-red bg-opacity-75"
@@ -26,7 +28,10 @@ export const ContactForm = () => {
 
 	return (
 		<>
-		<form onSubmit={handleSubmit(onSubmit)} className={`lg:mt-[4.125rem]`}>
+		<m.form initial={{x: 300, opacity: 0.3}} viewport={{once: true}} whileInView={{x: 0, opacity: 1, transition: {
+			duration: 0.6,
+				delay: 0.15,
+			}  }} onSubmit={handleSubmit(onSubmit)} className={`lg:mt-[4.125rem]`}>
 			{formInfo.map((field) => field !== "message" ?
 				(
 					<div className={`relative`} key={field}>
@@ -64,7 +69,7 @@ export const ContactForm = () => {
 				<span className={`sr-only`}>Submit</span>
 				<img src={arrow} alt=""/>
 			</button>
-		</form>
+		</m.form>
 
 		{isModalOpen && (
 			<div onClick={closeModal} className="fixed z-30 inset-0 bg-black bg-opacity-50 flex justify-center items-center">
