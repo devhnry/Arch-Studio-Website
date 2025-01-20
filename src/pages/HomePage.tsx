@@ -205,7 +205,7 @@ export const HomePage = () => {
                     className="text-[clamp(3rem,9.14vw+1rem,4.2rem)] leading-[clamp(3.25rem,10.3vw+1.2rem,4.3rem)] font-bold tracking-[0.075rem] whitespace-nowrap">
                   <m.span className={`inline-block`} initial={{scale: 1.5, opacity: 0.5}} viewport={{once: true}}
                           whileInView={{
-                            scale: 0.95, opacity: 1, transition: {
+                            scale: 0.93, opacity: 1, transition: {
                               duration: 0.7,
                               delay: 0.1
                             }
@@ -215,7 +215,7 @@ export const HomePage = () => {
                   <br/>
                   <m.span className={`inline-block`} initial={{scale: 0.5, opacity: 0.5}} viewport={{once: true}}
                           whileInView={{
-                            scale: 1.05, opacity: 1, transition: {
+                            scale: 1, opacity: 1, transition: {
                               duration: 0.7,
                               delay: 0.1
                             }
