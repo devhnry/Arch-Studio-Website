@@ -8,7 +8,7 @@ import PageLoader from "../components/PageLoader.tsx";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <PageLoader />
+    element: (<PageLoader /> )
   },
   {
     path: "/home",
