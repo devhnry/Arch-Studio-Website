@@ -210,18 +210,17 @@ export const HomePage = () => {
                               delay: 0.1
                             }
                           }}>Small
-                  </m.span>
+                  </m.span>{' '}
                   team,
                   <br/>
                   <m.span className={`inline-block`} initial={{scale: 0.5, opacity: 0.5}} viewport={{once: true}}
                           whileInView={{
-                            scale: 1, opacity: 1, transition: {
+                            scale: 1.05, opacity: 1, transition: {
                               duration: 0.7,
                               delay: 0.1
                             }
                           }}>Big
-                  </m.span>
-                  ideas
+                  </m.span>{' '}ideas
                 </m.h3>
                 <div onClick={() => handlePageChange('about us')}>
                   <Button page={page} setChangePage={setChangePage} setPageHeaded={setPageHeaded} linkTo={"about us"}
