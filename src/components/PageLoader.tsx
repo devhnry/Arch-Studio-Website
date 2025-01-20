@@ -32,7 +32,7 @@ const PageLoader = () => {
 					/>
 				</div>
 				{"Arch".split("").map((letter, index) => (
-					<m.p className={`-ml-[24px]`} initial={{x: -40, scale: 1.3, opacity: 0}} animate=
+					<m.p key={`${index}-${letter}`} className={`-ml-[24px]`} initial={{x: -40, scale: 1.3, opacity: 0}} animate=
 						{{
 							scale: 1,
 							x: 0,
