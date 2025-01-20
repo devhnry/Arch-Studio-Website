@@ -215,7 +215,7 @@ export const HomePage = () => {
                   <br/>
                   <m.span className={`inline-block`} initial={{scale: 0.5, opacity: 0.5}} viewport={{once: true}}
                           whileInView={{
-                            scale: 1.15, opacity: 1, transition: {
+                            scale: 1.05, opacity: 1, transition: {
                               duration: 0.7,
                               delay: 0.1
                             }
