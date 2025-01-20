@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "../pages/HomePage";
+import {HomePage} from "../pages/HomePage";
 import PortfolioPage from "../pages/PortfolioPage";
 import { AboutUsPage } from "../pages/AboutPage";
 import { ContactUsPage } from "../pages/ContactUsPage";
 import PageLoader from "../components/PageLoader";
-import NotFound from "../components/NotFound.tsx";
+import NotFound from "../components/NotFound";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <PageLoader />,
+    element: <PageLoader/>,
     errorElement: <NotFound />
   },
   {
@@ -27,7 +27,9 @@ export const router = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactUsPage />
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
-], {
-  basename: process.env.PUBLIC_URL || "/"
-});
+]);
